@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+    <div class="main-container">
+        <div class="calendar-section">
+            <div class="calendar-container">
+                <div class="header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="monthYear"></h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                </div>
+                <div id="calendarDays" class="days"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h1>My Tasks</h1>
+            
+            <div class="input-section">
+                <input type="text" class="task-input" placeholder="What needs to be done?" id="taskInput">
+                <button class="sort-btn" id="sortBtn">SortBy</button>
+            </div>
+            
+            <div class="task-form">
+                <select class="priority-select" id="prioritySelect">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <input type="date" class="date-input" id="dateInput">
+                <input type="number" class="time-input" id="time-hours" placeholder="HH" max="12" min="1">
+                <input type="number" class="time-input" id="time-min" placeholder="MM" max="59" min="0">
+                <div class="my-class">
+                    <label><input id="am" type="radio" name="ampm" value="AM" checked>AM</label>
+                    <label><input id="pm" type="radio" name="ampm" value="PM">PM</label>
+                </div>
+                <button class="add-btn" id="addBtn">Add task</button>
+            </div>
+
+            <div class="sort-options" id="sortOptions">
+                <div class="sort-option active" data-sort="none">Default</div>
+                <div class="sort-option" data-sort="priority">Priority</div>
+                <div class="sort-option" data-sort="deadline">Deadline</div>
+                <div class="sort-option" data-sort="alphabetical">A-Z</div>
+            </div>
+
+            <div class="task-list" id="taskList">
+                <div class="empty-state" id="emptyState">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                    </svg>
+                    <h3>No tasks yet</h3>
+                    <p>Add your first task to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-tooltip" id="taskTooltip"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
